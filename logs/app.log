@@ -1,0 +1,17 @@
+[INFO] 2025-10-29T17:15:51.337Z - Logging to file: ./logs/app.log
+[INFO] 2025-10-29T17:15:51.338Z - Server started on port 3000
+[SUCCESS] 2025-10-29T17:15:51.339Z - Database connected successfully
+[WARN] 2025-10-29T17:15:51.339Z - Cache size is nearing limit
+[ERROR] 2025-10-29T17:15:51.340Z - Failed to fetch user data
+[DEBUG] 2025-10-29T17:15:51.340Z - Request payload: { id: 42 }
+[INFO] 2025-10-29T17:15:52.145Z - Connected to database
+[ERROR] 2025-10-29T17:15:52.950Z - Request timeout
+[ERROR] 2025-10-29T17:15:53.754Z - Database connection failed
+[DEBUG] 2025-10-29T17:15:54.560Z - Session token refreshed
+[INFO] 2025-10-29T17:15:55.366Z - Server started on port 3000
+[WARN] 2025-10-29T17:15:56.165Z - Cache nearing capacity
+[WARN] 2025-10-29T17:15:56.967Z - Retrying failed request...
+[WARN] 2025-10-29T17:15:57.768Z - Retrying failed request...
+[WARN] 2025-10-29T17:15:58.579Z - Memory usage is high
+[WARN] 2025-10-29T17:15:59.389Z - Retrying failed request...
+[INFO] 2025-10-29T17:15:59.391Z - Log simulation finished

@@ -1,4 +1,11 @@
 import { log } from "./index.js";
+log.setLevel("debug");
+log.toFile("./logs/app.log");
+log.info("Server started on port 3000");
+log.success("Database connected successfully");
+log.warn("Cache size is nearing limit");
+log.error("Failed to fetch user data");
+log.debug("Request payload: { id: 42 }");
 const fakeMessages = {
     info: [
         "Connected to database",
@@ -32,7 +39,6 @@ function randomLog() {
     const message = getRandom(fakeMessages[type]);
     log[type](message);
 }
-// Simule des logs toutes les 800ms pendant 10 logs
 let count = 0;
 const maxLogs = 10;
 const interval = setInterval(() => {
