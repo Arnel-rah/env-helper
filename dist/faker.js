@@ -1,22 +1,45 @@
 import { log } from "./index.js";
-const fakeMessages = [
-    "Connected to database",
-    "User logged in successfully",
-    "Fetching API data...",
-    "Error: Invalid token",
-    "Server started on port 3000",
-    "Cache cleared",
-    "New order received",
-    "Debug mode enabled",
-];
-function randomMessage() {
-    return fakeMessages[Math.floor(Math.random() * fakeMessages.length)];
+const fakeMessages = {
+    info: [
+        "Connected to database",
+        "User logged in successfully",
+        "Server started on port 3000",
+        "Cache cleared",
+        "Fetching API data...",
+    ],
+    warn: [
+        "Memory usage is high",
+        "Retrying failed request...",
+        "Cache nearing capacity",
+    ],
+    error: [
+        "Error: Invalid token",
+        "Database connection failed",
+        "Request timeout",
+    ],
+    debug: [
+        "Debug mode enabled",
+        "Cache cleared internally",
+        "Session token refreshed",
+    ],
+};
+function getRandom(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
 }
 function randomLog() {
-    const types = ["info", "success", "warn", "error", "debug"];
-    const type = types[Math.floor(Math.random() * types.length)];
-    log[type](randomMessage());
+    const types = ["info", "warn", "error", "debug"];
+    const type = getRandom(types);
+    const message = getRandom(fakeMessages[type]);
+    log[type](message);
 }
-for (let i = 0; i < 5; i++) {
+// Simule des logs toutes les 800ms pendant 10 logs
+let count = 0;
+const maxLogs = 10;
+const interval = setInterval(() => {
     randomLog();
-}
+    count++;
+    if (count >= maxLogs) {
+        clearInterval(interval);
+        log.info("Log simulation finished");
+    }
+}, 800);
