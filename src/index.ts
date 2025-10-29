@@ -1,8 +1,5 @@
 import chalk from "chalk";
 
-/**
- * Interface des méthodes de log
- */
 export interface Logger {
   info: (msg: string) => void;
   success: (msg: string) => void;
@@ -11,9 +8,7 @@ export interface Logger {
   debug: (msg: string) => void;
 }
 
-/**
- * Logger coloré pour Node.js
- */
+
 export const log: Logger = {
   info: (msg) => console.log(chalk.blue(`[INFO] ${new Date().toISOString()} - ${msg}`)),
   success: (msg) => console.log(chalk.green(`[SUCCESS] ${new Date().toISOString()} - ${msg}`)),
